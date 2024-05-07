@@ -38,4 +38,14 @@ const updateUser = async (payload: iUserUpdate, userId: string): Promise<iUser> 
     return queryResult.rows[0];
 };
 
-export default { createUser, readUser, updateUser };
+const deleteUser = async (userId: string): Promise<any> => {
+    const queryFormat: string = format(
+        `DELETE FROM "users" WHERE "id" = $1;`
+    );
+
+    const queryResult: iUserResult = await client.query(queryFormat, [userId]);
+
+    return queryResult.rows[0];
+};
+
+export default { createUser, readUser, updateUser, deleteUser };

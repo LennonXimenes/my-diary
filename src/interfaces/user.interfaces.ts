@@ -15,5 +15,6 @@ type iUser = {
 
 type iUserResult = QueryResult<iUser>;
 type iUserCreate = Omit<iUser, "id">;
+type iUserUpdate = Partial<iUser>;
 
-export { iUser, iUserResult, iUserCreate };
+export { iUser, iUserResult, iUserCreate, iUserUpdate };

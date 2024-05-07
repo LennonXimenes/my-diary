@@ -3,7 +3,10 @@ import { userControllers } from "../controllers";
 
 const userRouter: Router = Router();
 
-userRouter.get("", userControllers.readUser);
 userRouter.post("", userControllers.createUser);
+userRouter.get("", userControllers.readUser);
+
+userRouter.patch("/:userId", userControllers.updateUser);
+
 
 export default userRouter;

@@ -17,8 +17,6 @@ const readUser = async (req: Request, res: Response): Promise<Response> => {
 const updateUser = async (req: Request, res: Response): Promise<Response> => {
     const { userId } = req.params;
 
-    console.log(`USERID CONTROLLER = ${userId}`);
-
     const newUser: iUserUpdate = await userServices.updateUser(req.body, userId);
 
     return res.status(200).json(newUser);

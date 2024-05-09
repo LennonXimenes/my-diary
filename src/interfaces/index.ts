@@ -1,3 +1,3 @@
-import { iUser, iUserResult, iUserCreate, iUserUpdate } from "./user.interfaces";
+import { iUser, iUserRead, iUserCreate, iUserUpdate, iUserResult } from "./user.interfaces";
 
-export { iUser, iUserResult, iUserCreate, iUserUpdate };
+export { iUser, iUserRead, iUserCreate, iUserUpdate, iUserResult };

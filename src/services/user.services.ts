@@ -2,7 +2,7 @@
 import { iUser, iUserCreate, iUserResult, iUserUpdate } from "../interfaces";
 import format from "pg-format";
 import { client } from "../database";
-import { QueryConfig } from "pg";
+import { userCreateSchema, userUpdateSchema } from "../schemas";
 
 const createUser = async (payload: iUserCreate): Promise<iUser> => {
     const queryFormat: string = format(

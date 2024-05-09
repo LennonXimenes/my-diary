@@ -1,20 +1,13 @@
 import { QueryResult } from "pg";
+import { userCreateSchema, userSchema, userUpdateSchema } from "../schemas";
+import { z } from "zod";
 
-type iUser = {
-    id: number,
-    name: string,
-    email: string,
-    password: string,
-    age: number,
-    profile_picture?: string,
-    admin: boolean,
-    created_at: Date | string,
-    updated_at: Date | string,
-    last_login: Date | string
-}
+type iUser = z.infer<typeof userSchema>;
+
+type iUserRead = Array<iUser>;
+type iUserCreate = z.infer<typeof userCreateSchema>;
+type iUserUpdate = z.infer<typeof userUpdateSchema>;
 
 type iUserResult = QueryResult<iUser>;
-type iUserCreate = Omit<iUser, "id">;
-type iUserUpdate = Partial<iUser>;
 
-export { iUser, iUserResult, iUserCreate, iUserUpdate };
+export { iUser, iUserRead, iUserCreate, iUserUpdate, iUserResult };
